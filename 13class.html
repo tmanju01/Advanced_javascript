@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // class:class is a templete for javascript objects.
+       class myclass{
+        constructor(){
+            console.log("this is class");
+        }
+       }
+       const data=new myclass;
+       console.log(data);
+
+       class newclass{
+        constructor(fname,lname){
+            this.fname="tops";
+            this.lname="tech";
+        }
+       }
+
+       const a=new newclass;
+       console.log(a.fname);
+       console.log(a.lname);
+
+       class demo{
+        constructor(x,y){
+            this.x =x;
+            this.y=y;
+            // console.log(this.x*this.y);
+            let sum=this.x*this.y
+            console.log(sum);
+
+        }
+       }
+       const p=new demo(4,2);
+       console.log(p);
+
+</script>
