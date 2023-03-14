@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //closure :closure means that an inner function always has access to the vars and parameters of its puter function,
+    // even after the outer function has returned,
+    
+    var a=10;//global variable
+
+    //outer function
+
+    function test()
+    {
+        var b=5;//local variable
+        console.log(a);
+        //inner function
+        function demo()
+        {
+            var c=2;
+            console.log(b);
+            console.log(a+b+c);
+        }
+        return demo()
+    }
+    test()
+
+
+    //counter closure
+    function counter()
+    {
+        let count=0;
+        function innerfunc()
+        {
+            return count+=1;
+        }
+        return innerfunc;
+    }
+    const data=counter()
+    console.log(data());
+    console.log(data());
+    console.log(data());
+</script>
