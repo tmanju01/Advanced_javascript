@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // constructer: a constructer  is a spacial function that creates and initialization 
+    // an Objectinstance of a class.
+
+    function demo(fname,lname)
+    {
+        this.fname=fname;
+        this.lname=lname;
+    }
+    // console.log(demo("john","doe")); //undifine
+    const data=new demo("john","doe")
+    console.log(data);
+
+    console.log(data.fname);
+    console.log(data.lname);
+</script>
