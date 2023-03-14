@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" align="center">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" id="name" value=" " onblur="validation(this,'nameerror')"
+                 onkeydown="nameValid(this,'nerror')">
+            <span id="nameerror" ></span>
+            <span id="nerror"></span>
+            </td>
+        </tr> 
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" id="email" value=" " onblur="validation(this,'emailerror')"
+                  onkeydown="EmailValid(this,'eerror')" >
+            <span id="emailerror"></span>
+            <span id="eerror"></span>
+        </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" id="pwd" value=" " onblur="validation(this,'pwderror')" 
+                onkeydown=" pwdValid(this,'perror')">
+            <span id="pwderror"></span>
+            <span id="perror"></span>
+        </td>
+        </tr>
+        <tr>
+            <td>Mobile:</td>
+            <td><input type="text" id="mobile" value=" " onblur="validation(this,'mobileerror')" 
+                onkeydown="MobileValidation(this,'phoneerror')">
+            <span id="mobileerror"></span>
+            <span id="phoneerror"></span></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="submit"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function validation(e,spnid){
+        if(e.value == " ")
+        {
+            document.getElementById(spnid).innerHTML="please enter data";
+            document.getElementById(spnid).style.color="red";
+            
+        }
+        else{
+            document.getElementById(spnid).innerHTML=" ";
+        }
+
+    }
+
+    function nameValid(e,spnid){
+        var name =/^[a-zA-z]+$/
+        if(name.test(e.value))
+        {
+            document.getElementById(spnid).innerHTML="";
+        }
+        else {
+            document.getElementById(spnid).style.color="red"
+            document.getElementById(spnid).innerHTML="please enter only characters!"
+        }
+    }
+    function EmailValid(e,spnid)
+    {
+        var  email=/^([a-z0-9._-])+@([a-z0-9-_]).+([a-z]{2,3})$/
+        if(email.test(e.value))
+        {
+            document.getElementById(spnid).innerHTML="";
+        }
+        else{
+            document.getElementById(spnid).style.color="red"
+            document.getElementById(spnid).innerHTML="please enter valid Email!"
+        }
+
+    }
+    function pwdValid(e,spnid)
+    {
+        var pwd =/^[a-zA-Z0-9]{3,5}$/
+        if(pwd.test(e.value))
+        {
+            document.getElementById(spnid).innerHTML="";
+        }
+        else{
+            document.getElementById(spnid).style.color="red"
+            document.getElementById(spnid).innerHTML="please enter min 3 & max 5 chars!"
+        }
+    }
+
+    function MobileValidation(e,spnid)
+    {
+        var mobile=/^[0-9]{10}$/
+        if(mobile.test(e.value)){
+            document.getElementById(spnid).innerHTML="";
+        }
+        else{
+            document.getElementById(spnid).style.color="red"
+            document.getElementById(spnid).innerHTML="please enter valid mobile!"
+        }
+
+    }
+
+
+
+</script>
