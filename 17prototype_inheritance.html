@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    //prototype inheritance:the prototype inheritance is a feature in javascript used to 
+    // add methods and prototype in object
+     function demo(fname,lname)
+    {
+        this.fname=fname;
+        this.lname=lname;
+    }
+
+    function student(fname,lname,age,school)
+    {
+        demo.call(this,fname,lname)
+        this.age=age;
+        this.school=school;
+    }
+    var std=new student("john","doe",15,"tops");
+    console.log(std);
+    console.log(std.school);
+    console.log(std.age);;
+
+</script>
