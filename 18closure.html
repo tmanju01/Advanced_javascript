@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //closure :closure means that an inner function always has access to the vars and parameters of its puter function,
+    // even after the outer function has returned,
+
+    
+    function demo(){
+        let count=0;
+        function test(){
+            return count+=1;
+        }
+        return test;
+
+    }
+
+    const data=demo();
+    console.log(data());
+    console.log(data());
+    console.log(data());
+</script>
