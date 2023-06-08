@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .main{
+        height: 400px;
+        width: 85%;
+        /* background-color: blueviolet; */
+        margin: 20px auto;
+    }
+    h1,p{
+      color: green;
+    }
+    h5,span{
+      color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Shoping Cart</h1>
+
+        <table class="table"  >
+            <thead>
+              <tr>
+                <th>
+                  <h5>Product Details</h5>
+                </th>
+                <th></th>
+                <th>
+                  <h5>Price</h5>
+
+                   </th>
+                <th>
+                  <h5>Quantity</h5>
+                </th>
+                <th>
+                  <h5>Subtotal</h5>
+                </th>
+                <th>
+                  <h5>Action</h5>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.OvYBM6GGGwEbF1T6CFQt0QHaFj&pid=Api&P=0" height="80px" 
+                    width="100px">
+                    
+                </td>
+                <td>
+                    <h5>Lenovo K6 Power</h5>
+                    <p>Lorem ipsum dolor sit amet, antium aspernatur placeat vitae omnis eius
+                        </p>
+                </td>
+                <td>
+                  <span id="p1">50000</span>
+                </td>
+                <td>
+                  <input type="text" name="" value="" id="q1" onblur="sum()">
+                </td>
+                <td>
+                  <span id="t1">50000</span>
+                </td>
+               <td>
+                <button type="button" class="btn btn-danger">Remove</button>
+               </td>
+              
+              </tr>
+              <tr>
+                <td>
+                  <img src="https://tse2.mm.bing.net/th?id=OIP.2_ePf85qB89-SVRwzZ6njgAAAA&pid=Api&P=0" height="80px" width="100px">
+                </td>
+                <td>
+                  <h5>iphone 6s</h5>
+                  <p>Lorem ipsum dolor sit amet, antium aspernatur placeat vitae omnis eius 
+                  </p>
+                </td>
+                <td>
+                  <span id="p2">30000</span>
+                </td>
+                <td>
+                  <input type="text" name="" value="" id="q2" onblur="sum()">
+                  </td>
+                  <td>
+                    <span id="t2">30000</span>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                   </td>
+                   
+                                </tr>
+              <tr>
+                <td>
+                  <img src="https://i5.walmartimages.com/asr/19a59d58-40fc-4aaa-909b-a23e3cc0499a_1.0cd3410ebfca4fe5dda5987a97c9d7ca.jpeg" height="80px" width="100px">
+                </td>
+                <td>
+                  <h5>Lenovo K6 Power</h5>
+                  <p>Lorem ipsum dolor sit amet, antium aspernatur placeat vitae omnis eius
+                  </p>
+                </td>
+                <td>
+                  <span id="p3">50000</span>
+                  </td>
+                <td>
+                  <input type="text" name="" value="" id="q3" onblur="sum()">
+                </td>
+                <td>
+                  <span id="t3">50000</span>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-danger">Remove</button>
+                 </td>
+                 
+                 
+              </tr>
+
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                  <h5>Total Price:</h5>
+                  <h5 id="total">1,30,000</h5>
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+    <script>
+      var q1=document.getElementById('q1');
+      // console.log(q1);
+      var p1=document.getElementById('p1');
+      // console.log(p1);
+      var t1=document.getElementById('t1');
+      // console.log(t1);
+
+      var q2=document.getElementById('q2');
+      var p2=document.getElementById('p2');
+      var t2=document.getElementById('t2');
+
+
+
+
+      var q3=document.getElementById('q3');
+      var p3=document.getElementById('p3');
+      var t3=document.getElementById('t3');
+
+      var total=document.getElementById('total');
+      // console.log(total);
+
+
+      function sum(){
+        t1.innerHTML=parseInt(q1.value) * parseInt(p1.innerHTML)
+        // console.log(t1);
+
+        t2.innerHTML=parseInt(q2.value) * parseInt(p2.innerHTML)
+        // console.log(t2);
+
+        t3.innerHTML=parseInt(q3.value) * parseInt(p3.innerHTML)
+        // console.log(t3);
+
+       total.innerHTML=parseInt(t1.innerHTML) + parseInt(t2.innerHTML) + parseInt(t3.innerHTML);
+       console.log(total);
+
+
+
+        
+      }
+
+      var removecartitembutton = document.getElementsByClassName('btn-danger');
+
+console.log(removecartitembutton);
+for (i=0;i<removecartitembutton.length;i++){
+ var button=removecartitembutton[i]
+ button.addEventListener('click', function(event){
+    var buttonclicked = event.target
+    buttonclicked.parentElement.parentElement.remove()
+
+ })
+}
+    </script>
+    <!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
